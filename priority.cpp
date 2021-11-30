@@ -136,11 +136,39 @@ void priorityScheduling(Process proc[], int n)
 int main()
 {
 
-    Process proc[] = {{1, 10, 2}, {2, 5, 0}, {3, 8, 1}};
+    Process proc[100];
 
-    int n = sizeof proc / sizeof proc[0];
+    int num, temp;
+ 
 
-    priorityScheduling(proc, n);
+    cout << "Enter number of Process: ";
+
+    cin >> num;
+ 
+
+    cout << "...Enter the process ID...\n";
+
+    for (int i = 0; i < num; i++) {
+
+        cout << "...Process " << i + 1 << "...\n";
+
+        cout << "Enter Process Id: ";
+
+        cin >> proc[i].pid;
+
+        cout << "Enter Priority: ";
+
+        cin >> proc[i].priority;
+
+        cout << "Enter Burst Time: ";
+
+        cin >> proc[i].bt;
+
+    }
+ 
+
+   
+    priorityScheduling(proc, num);
 
     return 0;
 }

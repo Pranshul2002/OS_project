@@ -196,21 +196,38 @@ int main()
 
     // process id's 
 
-    int processes[] = { 1, 2, 3}; 
+    int processes[100]; 
 
-    int n = sizeof processes / sizeof processes[0]; 
+    int burst_time[100]; 
+
+    int num, temp;
  
 
-    // Burst time of all processes 
+    cout << "Enter number of Process: ";
 
-    int burst_time[] = {10, 5, 8}; 
+    cin >> num;
  
 
-    // Time quantum 
+    cout << "...Enter the process ID...\n";
+
+    for (int i = 0; i < num; i++) {
+
+        cout << "...Process " << i + 1 << "...\n";
+
+        cout << "Enter Process Id: ";
+
+        cin >> processes[i];
+
+        cout << "Enter Burst Time: ";
+
+        cin >> burst_time[i];
+
+    }
+ 
 
     int quantum = 2; 
 
-    findavgTime(processes, n, burst_time, quantum); 
+    findavgTime(processes, num, burst_time, quantum); 
 
     return 0; 
 } 
